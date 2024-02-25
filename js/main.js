@@ -1,14 +1,14 @@
 function calcularSalario () {
-    var sueldoBruto = document.getElementById("sueldoBase").value;
-    var gratificacion = document.getElementById("gratificacion").value;
-    var bonoMov = document.getElementById("bonoMovilizacion").value;
-    var bonoCol = document.getElementById("bonoColacion").value;
-    var afp = document.getElementById("afp").value;
-    var prevision = document.getElementById("prevision").value;
-    var contrato = document.getElementById("tipocontrato").value;
+    var sueldoBruto = parseFloat(document.getElementById("sueldoBase").value)
+    var gratificacion = document.getElementById("gratificacion").value
+    var bonoMov = parseFloat(document.getElementById("bonoMovilizacion").value)
+    var bonoCol = parseFloat(document.getElementById("bonoColacion").value)
+    var afp = parseFloat(document.getElementById("afp").value)
+    var prevision = document.getElementById("prevision").value
+    var contrato = document.getElementById("tipocontrato").value
 
     var sueldoLiquido = sueldoBruto
-    var noImponibles = parseFloat(bonoMov) + parseFloat(bonoCol)
+    var noImponibles = bonoMov + bonoCol
 
     console.log(sueldoBruto)
     console.log(gratificacion)
