@@ -5,12 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Calculadora Salarial</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css">
-    <script src="/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+    <script src="js/main.js"></script>
 </head>
 
 <body>
-    
+    <div id="formularioCalculo">
+        <h4> Calcular sueldo <u>Líquido</u> en Chile</h4>
+        <form id="formularioSueldo">
+            <label for="sueldoBase">Ingresa tu Sueldo Base:</label>
+            <input type="number" id="sueldoBase" name="sueldoBase" >
+        <br>
+            <label for="gratificacion">Gratificación:</label>
+            <select name="gratificacion" id="gratificacion">
+                    <option value="si">SI</option>
+                    <option value="no">NO</option>
+            </select required>
+        <br>
+            <label for="bonoMovilizacion">Bono de Movilización:</label>
+            <input type="number" id="bonoMovilizacion" name="bonoMovilizacion">
+        <br>
+            <label for="bonoColacion">Bono de Colación:</label>
+            <input type="number" id="bonoColacion" name="bonoColacion">
+        <br>
+            <label for="afp">AFP:</label>
+            <select name="afp" id="afp">
+                <option value="1,44" name="afpCapital" >Capital</option>
+                <option value="1,44" name="afpCuprum" >Cuprum</option>
+                <option value="1,27" name="afpHabitat" >Habitat</option>
+                <option value="0,58" name="afpModelo" >Modelo</option>
+                <option value="1,16" name="afpPlanVital" >Planvital</option>
+                <option value="1,45" name="afpProvida" >Provida</option>
+                <option value="0,49" name="afpUno" >Uno</option>
+            </select required>
+        <br>
+            <label for="prevision">Previsión:</label>
+            <select name="prevision" id="prevision">
+                <option value="fonasa">FONASA</option>
+                <option value="isapre">ISAPRE</option>
+            </select required>
+        <br>
+            <label for="tipocontrato">Tipo de Contrato:</label>
+            <select name="tipocontrato" id="tipocontrato">
+                <option value="plazoFijo">Plazo Fijo</option>
+                <option value="indefinido">Indefinido</option>
+            </select required>
+        <br>
+        <br>
+            <button type="button" class="boton" onclick="calcularSalario()">Calcular</button>
+        </form>
+    </div>
 </body>
 
 </html>
