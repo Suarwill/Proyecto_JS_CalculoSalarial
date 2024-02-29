@@ -1,23 +1,30 @@
 function calcularSalario () {
-    var sueldoBruto = parseFloat(document.getElementById("sueldoBase").value)
+    var sueldoBruto = parseInt(document.getElementById("sueldoBase").value)
     var gratificacion = document.getElementById("gratificacion").value
-    var bonoMov = parseFloat(document.getElementById("bonoMovilizacion").value)
-    var bonoCol = parseFloat(document.getElementById("bonoColacion").value)
-    var afp = parseFloat(document.getElementById("afp").value)
+    if (gratificacion != "no") {
+        montoGratificacion = calcularGratificacion(sueldoBruto)
+    }
+    var bonoMov = parseInt(document.getElementById("bonoMovilizacion").value)
+    var bonoCol = parseInt(document.getElementById("bonoColacion").value)
+    var afp = parseFloat(document.getElementById("afp").value).toFixed(2) / 100
     var prevision = document.getElementById("prevision").value
     var contrato = document.getElementById("tipocontrato").value
 
-    var sueldoLiquido = sueldoBruto
-    var noImponibles = bonoMov + bonoCol
+    var sueldoImponible = sueldoBruto + montoGratificacion + bonoMov + bonoCol
+    var descuentosLegales = (sueldoImponible * ((afp+10)/100)) + (sueldoImponible * 0.07) 
+    var sueldoLiquido = sueldoImponible - descuentosLegales
 
-    console.log(sueldoBruto)
-    console.log(gratificacion)
-    console.log(bonoMov)
-    console.log(bonoCol)
-    console.log(afp)
-    console.log(prevision)
-    console.log(contrato)
-
-    console.log(sueldoLiquido)
-    console.log(noImponibles)
+    console.log("Su Sueldo es de $ " + sueldoLiquido)
+}
+function calcularGratificacion (sueldoBruto) {
+    iMM =  450000     // Ingreso minimo mensual
+    topeIMM = iMM * 4.75
+    topeSalarial = (sueldoBruto * 12) / 4
+    if (topeSalarial > topeIMM) {
+        montoGratificacion = topeIMM / 12
+    }
+    else {
+        montoGratificacion = topeSalarial / 12
+    }
+    return montoGratificacion   
 }
