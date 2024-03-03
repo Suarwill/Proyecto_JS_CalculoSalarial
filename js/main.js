@@ -24,6 +24,9 @@ function calcularSalario () {
     var sueldoImponible = sueldoBruto + montoGratificacion + bonoMov + bonoCol
     var descuentosLegales = (sueldoImponible * afp + sueldoImponible * 0.07 )
     var sueldoLiquido = parseInt(sueldoImponible - descuentosLegales)
+    if (sueldoLiquido < 100000) {
+        alert("Es posible que haya un Error en los datos Ingresados, favor verifique")
+    }
 
     return {
         imponible: sueldoImponible,
