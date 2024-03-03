@@ -1,7 +1,8 @@
 #calculoSalarial {
-    position: absolute;
+    position: flex;
     text-align: center;
-
+    top: 50%;
+    left: 50%;
     text-shadow: 10px;
 }
 #resultados {
