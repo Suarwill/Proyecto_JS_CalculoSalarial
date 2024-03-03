@@ -1,8 +1,14 @@
-#formularioCalculo {
+#calculoSalarial {
     position: absolute;
+    text-align: center;
+
+    text-shadow: 10px;
+}
+#resultados {
+    position: flex;
     text-align: center;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    color: red ;
     text-shadow: 10px;
 }
